@@ -18,6 +18,7 @@ export class MemStorage implements IStorage {
     const summary: Summary = { 
       ...insertSummary, 
       id,
+      customInstruction: insertSummary.customInstruction || null,
       createdAt: new Date()
     };
     this.summaries.set(id, summary);
