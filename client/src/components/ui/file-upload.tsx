@@ -43,15 +43,17 @@ export function FileUpload({
 
   return (
     <div
-      className={`flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-lg hover:border-gray-400 transition-colors ${className}`}
+      className={`flex justify-center px-8 py-8 border-2 border-blue-200 border-dashed rounded-xl hover:border-blue-300 hover:bg-blue-50/50 transition-all duration-200 bg-slate-50/50 ${className}`}
       onDrop={handleDrop}
       onDragOver={handleDragOver}
     >
-      <div className="space-y-1 text-center">
-        <Upload className="mx-auto h-12 w-12 text-gray-400" />
-        <div className="flex text-sm text-gray-600">
-          <label htmlFor="file-upload" className="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none">
-            <span>Upload a file</span>
+      <div className="space-y-3 text-center">
+        <div className="mx-auto w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg">
+          <Upload className="h-8 w-8 text-white" />
+        </div>
+        <div className="flex flex-col items-center gap-1 text-slate-600">
+          <label htmlFor="file-upload" className="relative cursor-pointer bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg">
+            <span>Choose File</span>
             <input
               id="file-upload"
               name="file-upload"
@@ -61,9 +63,11 @@ export function FileUpload({
               onChange={handleFileChange}
             />
           </label>
-          <p className="pl-1">or drag and drop</p>
+          <p className="text-sm">or drag and drop here</p>
         </div>
-        <p className="text-xs text-gray-500">TXT, DOCX, PDF up to 10MB</p>
+        <p className="text-xs text-slate-500 bg-white px-3 py-1 rounded-full border border-slate-200">
+          📄 TXT, DOCX, PDF up to 10MB
+        </p>
       </div>
     </div>
   );
